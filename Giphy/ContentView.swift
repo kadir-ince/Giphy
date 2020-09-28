@@ -8,12 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+  
     var body: some View {
-        VStack {
-            Text("Giphy")
-                .padding()
-           
-        }
+        Text("Giphy")
     }
 }
 
@@ -22,3 +19,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+let screen = UIScreen.main.bounds
