@@ -5,8 +5,8 @@
 //  Created by Kadir Ince on 28.09.2020.
 //
 
-import SwiftUI
 import SDWebImageSwiftUI
+import SwiftUI
 
 struct Home: View {
     @State var gifData: [String] = []
@@ -16,8 +16,8 @@ struct Home: View {
     var body: some View {
         VStack {
             ScrollView(.vertical, showsIndicators: false, content: {
-                ForEach(gifData, id : \.self) { url in
-                    HStack{
+                ForEach(gifData, id: \.self) { url in
+                    HStack {
                         Spacer()
                         AnimatedImage(url: URL(string: url)!)
                             .resizable()
@@ -26,7 +26,21 @@ struct Home: View {
                     }
                     .padding()
                 }
+                .onChange(of: url, perform: { value in
+                    self.gifData.append(value)
+                })
+                .navigationTitle("Gif's")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar(content: {
+                    Button(action:  {present.toggle() }, label: {
+                        Image(systemName: "rectangle.and.pencil.and.ellipsis")
+                            .font(.title)
+                    })
+                })
             })
+                .fullScreenCover(isPresented: $present, content: {
+                    GifController(url: $url, present: $present)
+                })
         }
     }
 }
