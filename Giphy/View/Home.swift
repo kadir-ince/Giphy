@@ -20,9 +20,8 @@ struct Home: View {
                     HStack {
                         Spacer()
                         AnimatedImage(url: URL(string: url)!)
-                            .resizable()
-                            .frame(width: screen.width - 100, height: 200)
-                            .cornerRadius(15)
+                            .aspectRatio(contentMode: .fit)
+                            .clipShape(CustomShape())
                     }
                     .padding()
                 }

@@ -21,6 +21,10 @@ struct GifController: UIViewControllerRepresentable {
         let controller = GiphyViewController()
         controller.mediaTypeConfig = [.emoji, .gifs, .stickers]
         controller.delegate = context.coordinator
+        // for fullscreen giphy screen
+        GiphyViewController.trayHeightMultiplier = 1.05
+        // for light theme (giphy theme)
+        controller.theme = GPHTheme(type: .light)
         return controller
     }
 
