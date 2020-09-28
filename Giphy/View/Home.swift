@@ -22,6 +22,18 @@ struct Home: View {
                         AnimatedImage(url: URL(string: url)!)
                             .aspectRatio(contentMode: .fit)
                             .clipShape(CustomShape())
+                            .contextMenu {
+                                Button(action: {
+                                    // for save gif
+                                }) {
+                                    HStack {
+                                        Text("Save")
+                                        Spacer()
+                                        Image(systemName: "square.and.arrow.down")
+                                    }
+                                    .foregroundColor(.black)
+                                }
+                            }
                     }
                     .padding()
                 }
@@ -31,8 +43,10 @@ struct Home: View {
                 .navigationTitle("Gif's")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar(content: {
-                    Button(action:  {present.toggle() }, label: {
-                        Image(systemName: "rectangle.and.pencil.and.ellipsis")
+                    Button(action: {
+                        present.toggle()
+                    }, label: {
+                        Image(systemName: "plus.square")
                             .font(.title)
                     })
                 })
