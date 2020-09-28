@@ -7,7 +7,7 @@ Show Gifs, Stickers, Emoji from Giphy.
 ![GitHub repo size](https://img.shields.io/github/repo-size/kadir-ince/Giphy)
 
 ## Simple Usage Case 
-<img width=450 src="https://github.com/kadir-ince/Giphy/blob/master/giphy.gif" alt="What's like?"> 
+<img width=380 src="https://github.com/kadir-ince/Giphy/blob/main/giphy.gif" alt="What's like?"> 
 
 
 
