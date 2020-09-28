@@ -24,7 +24,9 @@ struct Home: View {
                             .clipShape(CustomShape())
                             .contextMenu {
                                 Button(action: {
-                                    // for save gif
+                                    SDWebImageDownloader().downloadImage(with: URL(string: url)) { image, _, _, _ in
+                                        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+                                    }
                                 }) {
                                     HStack {
                                         Text("Save")
